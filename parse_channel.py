@@ -2,6 +2,9 @@ import discord
 from discord.ext import tasks
 from spotify_api import add_track
 import re
+import os
+from dotenv import load_dotenv
+load_dotenv()
 class MyClient(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args,**kwargs)
@@ -48,5 +51,5 @@ class MyClient(discord.Client):
     async def before_task(self):
         await self.wait_until_ready()
 client=MyClient()
-client.run('OTY2NzgwMzQyNTkxNjkyOTEx.YmGuWw.Y9mQuh67Aw2KnkGljplSfc3fVIM')
+client.run('DISCORD_TOKEN')
 
